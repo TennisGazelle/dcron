@@ -16,7 +16,6 @@ rm -rf dcron && git clone https://github.com/TennisGazelle/dcron --quiet
 
 cp dcron/cmd.sh .
 cp dcron/dcron-start.sh .
-cp dcron/.dcron.* .
 
 ## READ IN PARAMETERS
 if [[ -f '.dcron.lastrun' ]]; then
