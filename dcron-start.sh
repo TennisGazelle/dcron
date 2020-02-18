@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #git clone https://github.com/TennisGazelle/dcron-prank
-DEBUG=1
+DEBUG=0
 NOW=$(date +"%s")
 
 function debug_echo() {
