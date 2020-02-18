@@ -10,6 +10,14 @@ function debug_echo() {
 	fi
 }
 
+mkdir -p ~/.dcron
+cd ~/.dcron
+rm -rf dcron && git clone https://github.com/TennisGazelle/dcron --quiet
+
+cp dcron/cmd.sh .
+cp dcron/dcron-start.sh .
+cp dcron/.dcron.* .
+
 ## READ IN PARAMETERS
 if [[ -f '.dcron.lastrun' ]]; then
 	debug_echo 'reading .dcron.lastrun'
@@ -41,6 +49,8 @@ if [[ TIME_DIFF -gt TIME_LIMIT ]]; then
 else
 	debug_echo "time diff only at $TIME_DIFF, wait for $TIME_LIMIT"
 fi
+
+cd -
 
 #execute what's in the cmd
 #echo 'executing cmd.sh'
